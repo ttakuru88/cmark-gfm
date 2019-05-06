@@ -115,7 +115,8 @@ static table_row *row_from_string(cmark_syntax_extension *self,
                                   cmark_parser *parser, unsigned char *string,
                                   int len) {
   table_row *row = NULL;
-  bufsize_t cell_matched = 1, pipe_matched = 1, offset, cell_end_offset;
+  bufsize_t cell_matched = 1, pipe_matched = 1, offset;
+  uint16_t cell_end_offset;
 
   row = (table_row *)parser->mem->calloc(1, sizeof(table_row));
   row->n_columns = 0;
