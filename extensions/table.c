@@ -116,7 +116,7 @@ static table_row *row_from_string(cmark_syntax_extension *self,
                                   int len) {
   table_row *row = NULL;
   bufsize_t cell_matched = 1, pipe_matched = 1, offset;
-  uint16_t cell_end_offset;
+  int cell_end_offset;
 
   row = (table_row *)parser->mem->calloc(1, sizeof(table_row));
   row->n_columns = 0;
@@ -178,7 +178,7 @@ static table_row *row_from_string(cmark_syntax_extension *self,
 static void try_inserting_table_header_paragraph(cmark_parser *parser,
                                                  cmark_node *parent_container,
                                                  unsigned char *parent_string,
-                                                 uint16_t paragraph_offset) {
+                                                 int paragraph_offset) {
   cmark_node *paragraph;
   cmark_strbuf *paragraph_content;
 
