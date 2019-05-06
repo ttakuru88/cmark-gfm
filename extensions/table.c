@@ -16,7 +16,7 @@ cmark_node_type CMARK_NODE_TABLE, CMARK_NODE_TABLE_ROW,
 
 typedef struct {
   uint16_t n_columns;
-  uint16_t paragraph_offset;
+  int paragraph_offset;
   cmark_llist *cells;
 } table_row;
 
