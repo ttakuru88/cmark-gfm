@@ -184,7 +184,7 @@ static void try_inserting_table_header_paragraph(cmark_parser *parser,
 
   paragraph = cmark_node_new_with_mem(CMARK_NODE_PARAGRAPH, parser->mem);
 
-  paragraph_content = unescape_pipes(parser->mem, (unsigned char *)parent_string, paragraph_offset);
+  paragraph_content = unescape_pipes(parser->mem, parent_string, paragraph_offset);
   cmark_strbuf_trim(paragraph_content);
   cmark_node_set_string_content(paragraph, (char *) paragraph_content->ptr);
 
